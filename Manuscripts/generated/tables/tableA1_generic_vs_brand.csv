@@ -1,0 +1,11 @@
+Architecture,Subgroup,N,Events,C-statistic,AUPRC,Brier
+Logistic,Generic,98008,250,0.6834,0.0061,0.0026
+Logistic,Brand,101177,96,0.824,0.0059,0.0009
+Time-only baseline,Generic,98008,250,0.5001,0.0024,0.0025
+Time-only baseline,Brand,101177,96,0.5414,0.001,0.001
+LightGBM,Generic,98008,250,0.5814,0.0047,0.0683
+LightGBM,Brand,101177,96,0.7729,0.0034,0.0194
+LightGBM + focal,Generic,98008,250,0.6801,0.006,0.0852
+LightGBM + focal,Brand,101177,96,0.7439,0.0031,0.079
+Transformer,Generic,98008,250,0.6711,0.0046,0.0315
+Transformer,Brand,101177,96,0.8166,0.0059,0.0132

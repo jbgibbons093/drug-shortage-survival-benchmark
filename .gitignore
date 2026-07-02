@@ -1,0 +1,73 @@
+# Local environments and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Local agent/editor state
+.agents/
+.claude/
+.codex/
+.playwright-mcp/
+.remember/
+.claude_resources.json
+AGENTS.md
+CLAUDE.md
+
+# Scratch and archived working material
+tmp/
+old/
+Programs/old/
+Data/analysis/old/
+Manuscripts/old/
+Manuscripts/generated/old/
+
+# Raw, intermediate, licensed, and regenerated data products
+Raw Data/
+Data/*
+!Data/README.md
+Data/intermediate/
+Data/raw/
+Data/cache/
+Data/analysis/
+
+# Credentials and local source exports
+Programs/fda_api_keys.json
+*.env
+*.key
+*.pem
+
+# Submission documents and large journal image exports
+Manuscripts/generated/*.docx
+Manuscripts/generated/*.pdf
+Manuscripts/generated/submission_preflight_report.json
+Manuscripts/generated/figures/*.tiff
+Manuscripts/generated/tables/reference_*.csv
+Manuscripts/generated/tables/reporting_checklist_author_review.csv
+Manuscripts/generated/tables/submission_*.csv
+Manuscripts/generated/tables/suggested_*.csv
+Manuscripts/generated/tables/tableA14_onset_6month_watchlist.csv
+
+# Local web/demo screenshots not used by the paper pipeline
+dashboard*.png
+drug-detail*.png
+ketamine-drug-detail.png
+portal-logo*.png
+portal logo.svg
+
+# Non-pipeline working folders
+Analysis/
+Articles/
+Documents/
+Tools/
+NEJM AI samples/
+leakage_investigation/
+webapp/
+
+# Internal notes not needed for the public analysis package
+docs/
+manuscript_review.md

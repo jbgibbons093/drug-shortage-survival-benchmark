@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the associated manuscript."
+title: "Forecasting National Drug Shortage Onset and Resolution using Machine Learning"
+authors:
+  - family-names: Gibbons
+    given-names: Jason B.
+  - family-names: Rome
+    given-names: Benjamin N.
+  - family-names: Kesselheim
+    given-names: Aaron S.
+  - family-names: Fox
+    given-names: Erin
+  - family-names: Hwang
+    given-names: Thomas J.
+date-released: 2026-07-02
+repository-code: "https://github.com/mcgibbons11-art/drug-shortage-survival-benchmark"
+abstract: "Code and aggregate exhibits for a temporal survival benchmark of national drug shortage onset and resolution."

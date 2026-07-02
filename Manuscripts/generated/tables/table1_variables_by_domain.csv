@@ -1,0 +1,15 @@
+domain,n_variables,variables
+Utilization,128,"Prescription volume, spending, units dispensed, prescriber counts, average prescription size, and observed-use trends from Medicaid, Medicare Part B and Part D, and Symphony Health. Measures include recent levels, prior-month values, changes, and rolling summaries."
+Market structure,46,"Number and concentration of manufacturers, labelers, applications, active products, routes, and therapeutic classes. Measures also identify sole-source or low-competition markets, manufacturer exits, ownership changes, and market-fragility composites."
+Pricing,44,"Acquisition and reimbursement price levels from NADAC and ASP, per-package and per-unit payment measures, prices relative to market medians, low-price flags, price shocks, and recent price changes."
+Supply-chain geography,43,"API supplier and registered facility counts, supplier-country concentration, domestic share, China and India exposure, low-supplier indicators, and disaster exposure near API suppliers or manufacturing facilities."
+Regulatory quality,38,"FDA inspection counts and outcomes, warning letters, OAI and VAI findings, adverse-event report levels and trends, composite quality-signal measures, and time since recent quality events."
+Shortage history,38,"Prior shortage starts, ends, and months in shortage for the same drug group. Related-drug pressure from the same ingredient, route, dosage form, therapeutic class, and labeler. Episode-duration and recurrence measures. Current shortage status was used only to define which drug-months were eligible for onset or resolution modeling."
+Source coverage,27,"Indicators that a data source did or did not cover a drug-month before fill rules were applied, including pricing, utilization, market-structure, supply-chain, recall, and regulatory-quality coverage."
+Drug characteristics,15,"Route, dosage form, therapeutic class, generic or brand status, injectable or intravenous formulation, controlled-substance status, domestic status, repackager status, marketing category, ingredient count, and calendar indicators."
+Natural-disaster exposure,12,"Recent and one-year natural-disaster counts, major-disaster indicators, lagged and rolling disaster measures, time since major disaster, and the share of related NDCs with disaster exposure."
+Patents and exclusivity,10,"Active exclusivity, product and substance patents, total patent counts, recent patent expiry, patent-cliff indicators, exclusivity loss, and months to nearest expiry."
+Time history,7,"Elapsed time since prior group onset, resolution, warning letter, recall, nearest patent or exclusivity expiry, and last shortage, plus years since market entry."
+Same-ingredient shortage pressure,6,"Generated lagged, rolling, and change measures of same-ingredient shortage pressure, plus residual engineered predictors not assigned to a source-specific domain."
+Recalls,5,"Class I recall indicators, recall counts over 12 and 24 months, time since last recall, and recall-source coverage."
+Repackagers,2,Number of repackagers associated with a group and indicators that repackager records were retained in the marketed-product panel.

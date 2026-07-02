@@ -1,0 +1,15 @@
+Domain,Features,Coverage or missingness indicators,Features with residual missingness,Highest residual missingness,Median value or prevalence
+Utilization,128,5,0,0.000,37750.354
+Market structure,46,2,0,0.000,0.550
+Pricing,44,7,0,0.000,0.083
+Supply-chain geography,43,2,0,0.000,0.842
+Regulatory quality,38,3,0,0.000,0.519
+Shortage history,38,0,0,0.000,0.960
+Source coverage,27,27,0,0.000,0.615
+Drug characteristics,15,0,0,0.000,0.444
+Natural-disaster exposure,12,0,0,0.000,5.470
+Patents and exclusivity,10,4,0,0.000,0.086
+Time history,7,0,0,0.000,35.012
+Related-product signals,6,0,0,0.000,0.215
+Recalls,5,1,0,0.000,2.901
+Repackagers,2,0,0,0.000,1.313

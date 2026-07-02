@@ -1,0 +1,6 @@
+Task,Model,Excluded features,N,Events,C-statistic,AUPRC,Brier,ECE,Precision at 100,Features
+Onset,Logistic,Licensed Symphony prescription features,199185,346,0.759,0.006,0.002,0.001,0.009,301
+Onset,Time-only baseline,Licensed Symphony prescription features,199185,346,0.511,0.002,0.002,0.001,0.001,301
+Onset,LightGBM,Licensed Symphony prescription features,199185,346,0.603,0.003,0.048,0.064,0.004,301
+Onset,LightGBM + focal,Licensed Symphony prescription features,199185,346,0.708,0.005,0.124,0.323,0.008,301
+Onset,Transformer,Licensed Symphony prescription features,199185,346,0.746,0.004,0.002,0.016,0.003,301

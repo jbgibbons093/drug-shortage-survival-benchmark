@@ -1,0 +1,21 @@
+Feature,Domain,C-statistic drop
+Supply-chain risk composite,Supply-chain geography,0.1261
+labeler shortage burden rollmean6,Shortage history,0.0392
+Therapeutic class,Drug characteristics,0.0376
+Injectable formulation,Drug characteristics,0.0356
+Months since ingredient-level pressure,Shortage history,0.0230
+symphony trx pack units rollmean6,Utilization,0.0161
+Recent onset rate in therapeutic class,Shortage history,0.0131
+Change in related-shortage pressure,Shortage history,0.0114
+recall count 24m,Recalls,0.0106
+"API supplier disaster exposure, 3 months",Supply-chain geography,0.0101
+Route of administration,Drug characteristics,0.0093
+api india china share,Supply-chain geography,0.0049
+Number of active ingredients,Drug characteristics,0.0040
+contagion stress rollmax6,Shortage history,0.0029
+Composite prior-shortage pressure,Natural-disaster exposure,0.0024
+Recent shortages in therapeutic class,Shortage history,0.0021
+dosage form peer shortage burden 3m,Shortage history,0.0021
+Dosage form,Drug characteristics,0.0018
+n api suppliers lag6,Supply-chain geography,0.0016
+ae trend 12m lag3,Regulatory quality,0.0015

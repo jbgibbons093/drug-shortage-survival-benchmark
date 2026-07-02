@@ -1,0 +1,21 @@
+Rank,Drug group,Route,Dosage form,Therapeutic class,Generic,Predicted probability,Prediction month
+1,octreotide acetate,Subcutaneous,Injection,Somatostatin Analog,No,0.7659,2025-08
+2,indocyanine green,Intravenous,Kit,Unclassified,No,0.6016,2025-08
+3,ibrexafungerp,Oral,"Tablet, Film Coated",Triterpenoid Antifungal,No,0.5100,2025-08
+4,Bacitracin,Ophthalmic,Ointment,Decreased Cell Wall Synthesis & Repair [PE],Yes,0.3082,2025-08
+5,aprepitant,Oral,Capsule,Substance P/Neurokinin-1 Receptor Antagonist,Yes,0.2257,2025-08
+6,lanreotide acetate,Subcutaneous,Injection,Somatostatin Analog,Yes,0.2069,2025-08
+7,mannitol,Unclassified,Kit,Unclassified,No,0.1906,2025-08
+8,Dexmedetomidine Hydrochloride,Intravenous,"Injection, Solution",Central alpha-2 Adrenergic Agonist,Yes,0.1903,2025-08
+9,AMINOCAPROIC ACID,Intravenous,"Injection, Solution",Antifibrinolytic Agent,Yes,0.1903,2025-08
+10,insulin aspart,Subcutaneous,"Injection, Solution",Insulin Analog,No,0.1884,2025-08
+11,riluzole,Oral,"Tablet, Film Coated",Benzothiazole,Yes,0.1630,2025-08
+12,Promethazine,Oral,Solution,Phenothiazine,Yes,0.1607,2025-08
+13,nicardipine hydrochloride,Intravenous,"Injection, Solution",Dihydropyridine Calcium Channel Blocker,Yes,0.1582,2025-08
+14,linezolid,Oral,"Granule, For Suspension",Oxazolidinone Antibacterial,Yes,0.1563,2025-08
+15,insulin aspart,Subcutaneous,"Injection, Suspension",Insulin Analog,No,0.1533,2025-08
+16,Decitabine,Intravenous,Injection,Nucleoside Metabolic Inhibitor,Yes,0.1497,2025-08
+17,Alteplase,Intravenous,"Injection, Powder, Lyophilized, For Solution",Unclassified,No,0.1495,2025-08
+18,rifaximin,Oral,Tablet,Rifamycin Antibacterial,No,0.1480,2025-08
+19,Ephedrine hydrochloride,Intravenous,"Injection, Solution",Norepinephrine Releasing Agent,No,0.1466,2025-08
+20,Albumin Human,Intravenous,Solution,Human Serum Albumin,No,0.1466,2025-08
