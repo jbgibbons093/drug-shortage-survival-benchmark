@@ -487,10 +487,13 @@ def tableA5_missingness():
     # Residual post-fill missingness is zero by construction (zero fills plus indicators),
     # so the summary reports source-coverage shares instead. Coverage-share indicators are
     # has_*, *_is_observed, *_observed_share_*, and inverted *_missing; recency-type
-    # indicators (months_since_*_observed) do not encode a share and are excluded.
+    # indicators (months_since_*_observed) do not encode a share and are excluded, as are
+    # substantive attribute flags that describe the drug rather than data availability.
+    SUBSTANTIVE_HAS_FLAGS = {"has_active_exclusivity", "has_substance_patent", "has_product_patent"}
+
     def _coverage_share(row):
         f, v = str(row["feature"]), row["mean_or_prevalence"]
-        if pd.isna(v):
+        if pd.isna(v) or f in SUBSTANTIVE_HAS_FLAGS:
             return np.nan
         if f.endswith("_missing"):
             return 1.0 - float(v)
@@ -500,7 +503,10 @@ def tableA5_missingness():
 
     summary = (
         m.assign(
-            is_coverage_indicator=m["feature"].astype(str).str.contains("missing|observed|coverage|has_", case=False, regex=True),
+            is_coverage_indicator=(
+                m["feature"].astype(str).str.contains("missing|observed|coverage|has_", case=False, regex=True)
+                & ~m["feature"].astype(str).isin(SUBSTANTIVE_HAS_FLAGS)
+            ),
             coverage_share=m.apply(_coverage_share, axis=1),
         )
         .groupby("domain", as_index=False)
