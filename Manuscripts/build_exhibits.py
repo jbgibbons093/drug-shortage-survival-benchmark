@@ -188,9 +188,17 @@ FEATURE_LABELS = {
     "disaster_count_3m_delta6": "Change in natural-disaster count, 6 months",
     "disaster_count_3m_lag6": "Natural-disaster count, 6-month lag",
     "disaster_count_3m_rollmax6": "Peak recent natural-disaster count",
-    "disruption_signal": "Composite prior-shortage pressure",
+    "disruption_signal": "Composite natural-disaster exposure",
     "dosage_form": "Dosage form",
     "dosage_form_peer_onset_rate_6m": "Recent onset rate in same dosage form",
+    "dosage_form_peer_shortage_burden_3m": "Recent shortages among same-dosage-form drugs",
+    "labeler_shortage_burden_rollmean6": "Average labeler shortage burden",
+    "symphony_trx_pack_units_rollmean6": "Average prescription pack units",
+    "recall_count_24m": "Recall count, past 24 months",
+    "api_india_china_share": "API supply share from India and China",
+    "contagion_stress_rollmax6": "Peak related-shortage pressure",
+    "n_api_suppliers_lag6": "Number of API suppliers, 6-month lag",
+    "ae_trend_12m_lag3": "Adverse-event trend, 3-month lag",
     "ever_shortage_before": "Prior shortage history",
     "ingredient_pressure": "Same-ingredient shortage pressure",
     "is_injectable": "Injectable formulation",
@@ -476,29 +484,44 @@ def tableA5_missingness():
         m.to_excel(TAB / "tableA5_feature_missingness.xlsx", index=False, sheet_name="features")
     except Exception as exc:
         print(f"  tableA5 xlsx skipped: {exc}")
+    # Residual post-fill missingness is zero by construction (zero fills plus indicators),
+    # so the summary reports source-coverage shares instead. Coverage-share indicators are
+    # has_*, *_is_observed, *_observed_share_*, and inverted *_missing; recency-type
+    # indicators (months_since_*_observed) do not encode a share and are excluded.
+    def _coverage_share(row):
+        f, v = str(row["feature"]), row["mean_or_prevalence"]
+        if pd.isna(v):
+            return np.nan
+        if f.endswith("_missing"):
+            return 1.0 - float(v)
+        if f.startswith("has_") or f.endswith("_is_observed") or "_observed_share_" in f:
+            return float(v)
+        return np.nan
+
     summary = (
         m.assign(
-            has_residual_missing=m["missing_rate"].fillna(0).astype(float) > 0,
             is_coverage_indicator=m["feature"].astype(str).str.contains("missing|observed|coverage|has_", case=False, regex=True),
+            coverage_share=m.apply(_coverage_share, axis=1),
         )
         .groupby("domain", as_index=False)
         .agg(
             Features=("feature", "count"),
             Coverage_or_missingness_indicators=("is_coverage_indicator", "sum"),
-            Features_with_residual_missingness=("has_residual_missing", "sum"),
-            Highest_residual_missingness=("missing_rate", "max"),
+            Median_source_coverage=("coverage_share", "median"),
+            Lowest_source_coverage=("coverage_share", "min"),
             Median_mean_or_prevalence=("mean_or_prevalence", "median"),
         )
         .sort_values("Features", ascending=False)
     )
-    summary["Highest_residual_missingness"] = summary["Highest_residual_missingness"].fillna(0).map(lambda x: f"{float(x):.3f}")
+    for col in ["Median_source_coverage", "Lowest_source_coverage"]:
+        summary[col] = summary[col].map(lambda x: "NA" if pd.isna(x) else f"{float(x):.3f}")
     summary["Median_mean_or_prevalence"] = summary["Median_mean_or_prevalence"].fillna(0).map(lambda x: f"{float(x):.3f}")
     summary["domain"] = summary["domain"].map(DOMAIN_LABELS).fillna(summary["domain"].str.replace("_", " "))
     summary = summary.rename(columns={
         "domain": "Domain",
         "Coverage_or_missingness_indicators": "Coverage or missingness indicators",
-        "Features_with_residual_missingness": "Features with residual missingness",
-        "Highest_residual_missingness": "Highest residual missingness",
+        "Median_source_coverage": "Median source coverage",
+        "Lowest_source_coverage": "Lowest source coverage",
         "Median_mean_or_prevalence": "Median value or prevalence",
     })
     summary.to_csv(TAB / "tableA8_feature_missingness_summary.csv", index=False)
